@@ -1,0 +1,55 @@
+<form
+  [formGroup]="unitInfoForm"
+  (ngSubmit)="createUpdateUnit()"
+  autocomplete="off"
+>
+  <mat-card class="mat-elevation-z8">
+    <mat-card-content>
+      <h2 class="text-left text-primary">
+        Unit Details
+        <mat-icon (mouseenter)="openDialogComplexInfoHover()">info</mat-icon>
+      </h2>
+      <hr />
+      <div class="mb-3 form-floating">
+        <app-text-input
+          [formControl]="$any(unitInfoForm.controls['unitnumber'])"
+          [label]="'Unit Number'"
+          [(ngModel)]="this.model.unitNumber"
+        ></app-text-input>
+
+        <select
+          [formControl]="$any(unitInfoForm.controls['unitTypeId'])"
+          [(ngModel)]="this.model.unitTypeId"
+          style="width: 300px"
+          class="form-select ms-1"
+        >
+          @for (unittype of this.unitTypes; track unittype.unitTypeId) {
+          <option [value]="unittype.unitTypeId">
+            {{ unittype.description }}
+          </option>
+          }
+        </select>
+
+        <br />
+
+        <div class="form-group text-left">
+          <button
+            [disabled]="!unitInfoForm.valid"
+            class="btn btn-success me-2"
+            type="submit"
+          >
+            Submit
+          </button>
+          <button
+            class="btn btn-default me-2"
+            (click)="cancel()"
+            type="button"
+            cdkFocusInitial
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </mat-card-content></mat-card
+  >
+</form>

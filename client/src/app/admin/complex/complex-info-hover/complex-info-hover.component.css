@@ -1,0 +1,3 @@
+.pLinebreak {
+      white-space: break-spaces; /* <===== This is important*/
+    }

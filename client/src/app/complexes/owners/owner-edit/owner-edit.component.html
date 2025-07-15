@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-content>
+    <h2 class="text-left text-primary">Owner Details</h2>
+
+    <hr />
+        <div class="mb-3 form-floating">
+          <app-text-input
+            [formControl]="$any(ownerEditForm.controls['cellphone'])"
+            [label]="'Cellphone'"
+            [(ngModel)]="this.model.cellphone"
+          ></app-text-input>
+
+ 
+
+             <app-text-input
+            [formControl]="$any(ownerEditForm.controls['fullname'])"
+            [label]="'Full Name'"
+            [(ngModel)]="this.model.fullName"
+          ></app-text-input>
+          <app-text-input
+            [formControl]="$any(ownerEditForm.controls['email'])"
+            [label]="'Email'"
+            [(ngModel)]="this.model.email"
+          ></app-text-input>
+
+          <app-text-input
+            [formControl]="$any(ownerEditForm.controls['cellphone'])"
+            [label]="'Cellphone'"
+            [(ngModel)]="this.model.cellphone"
+          ></app-text-input>
+         </div>
+      <div class="form-group text-left">
+        <button class="btn btn-success me-2" type="submit">Submit</button>
+        <button class="btn btn-default me-2" type="button">Cancel</button>
+      </div>
+  </mat-card-content></mat-card>
