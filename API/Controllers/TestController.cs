@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    public class TestController(DataContext context, IMapper mapper) : BaseApiController
+    public class TestController() : BaseApiController
     {
 
         [HttpGet(Name = "GetHelloTest")]

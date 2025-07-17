@@ -23,7 +23,7 @@ namespace API.Entities
 
         [ForeignKey("UnitType")]
         public required int UnitTypeId { get; set; }
-        public UnitType UnitType { get; set; }
+        public required UnitType UnitType { get; set; }
 
         [ForeignKey("Tenant")]
         public int? TenantId { get; set; }
