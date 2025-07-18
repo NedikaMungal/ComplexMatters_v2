@@ -46,15 +46,15 @@ public class AccountController(DataContext context, ITokenService tokenService, 
             x.UserName == loginDto.Username.ToLower());
         if (user == null)
             return Unauthorized("Invalid username");
-        try
-        {
+       // try
+       // {
             //will only execute this code when user is successful
             await ExecuteSend("Can you believe that this actually works!!!");
-        }
-        catch (Exception ex)
-        {
+       // }
+       // catch (Exception ex)
+       // {
 
-        }
+       // }
 
 
         using var hmac = new HMACSHA512(user.PasswordSalt);
